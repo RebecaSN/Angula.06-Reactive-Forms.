@@ -1,0 +1,48 @@
+.containder{
+    background: linear-gradient(rgb(247,198,206),rgb(177,195,181));
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+.btn{
+background-color:rgb(247,247,195);
+color: rgb(177,195,181);
+flex-grow: 1;
+}
+.Form{
+display: flex;
+justify-content: center;
+align-items: stretch;
+flex-direction: column;
+
+}
+.titulo{
+color:rgb(247,247,195);
+font-weight: 600;
+font-size:x-large
+}
+.botao{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+}
+.campos{
+    align-items: stretch;
+}
+.vermelho{
+    font-size: 10.5px;
+    color: red;
+    line-height: 11.8125px;
+    text-decoration: none solid rgb(244,67,54);
+    background: transparent;
+}
+.telefone{
+    display: flex;
+    flex-direction: column;
+
+
+}
