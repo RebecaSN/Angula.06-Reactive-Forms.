@@ -18,15 +18,15 @@ export class AppComponent {
     public fb:FormBuilder
     ){}
 
-  DadosPessoais:FormGroup = this.fb.group({
-  nome: this.fb.control('',[Validators.required,Validators.minLength(3)]),
-  sobrenome:this.fb.control('',[Validators.required,Validators.minLength(3)]),
-  username:this.fb.control('',[Validators.required,Validators.minLength(5)]),
-  cpf:this.fb.control('',[Validators.required,Validators.minLength(11)]),
-  endereco:this.fb.control('',[Validators.required]),
-  complemento:this.fb.control('',[Validators.required]),
-  senha: this.fb.control('',[Validators.required,Validators.minLength(8)]),
-  senha2:this.fb.control('',[Validators.required,Validators.minLength(8)]),
+   DadosPessoais:FormGroup = this.fb.group({
+   nome: this.fb.control(''),
+   sobrenome:this.fb.control(''),
+   username:this.fb.control(''),
+   cpf:this.fb.control(''),
+   endereco:this.fb.control(''),
+   complemento:this.fb.control(''),
+   senha: this.fb.control(''),
+   senha2:this.fb.control(''),
 
    telefone: new FormArray ([
     new FormControl('',[Validators.required,Validators.minLength(11)]),
@@ -35,31 +35,31 @@ export class AppComponent {
 
   })
 
- telefone:FormArray =(this.DadosPessoais.get('telefone') as FormArray)
+ telefone:FormArray = this.DadosPessoais.get('telefone') as FormArray
  
   
- Nome:string='';
- Sobrenome:string='';
- Username:string='';
- CPF:string='';
- Telefone:string='';
- Endereco:string='';
- Complemento:string='';
- Senha:string='';
- Senha2:string='';
+ Nome:FormControl=new FormControl('',[Validators.required,Validators.minLength(3)])
+ Sobrenome:FormControl=new FormControl('',[Validators.required,Validators.minLength(3)])
+ Username:FormControl=new FormControl('',[Validators.required,Validators.minLength(5)])
+ CPF:FormControl=new FormControl('',[Validators.required,Validators.minLength(11)])
+ Telefone:FormControl=new FormControl('',[Validators.required,Validators.minLength(11)])
+ Endereco:FormControl=new FormControl('',[Validators.required])
+ Complemento:FormControl=new FormControl('',[Validators.required])
+ Senha:FormControl=new FormControl('',[Validators.required,Validators.minLength(8)])
+ Senha2:FormControl=new FormControl('',[Validators.required,Validators.minLength(8)])
 
 
  openDialog(): void {
    const Ref = this.dialog.open(DialogComponent) 
-   Ref.componentInstance.nome=this.Nome
-   Ref.componentInstance.sobrenome=this.Sobrenome
-   Ref.componentInstance.username=this.Username
-   Ref.componentInstance.cpf=this.CPF
-   Ref.componentInstance.telefone=this.Telefone
-   Ref.componentInstance.endereco=this.Endereco
-   Ref.componentInstance.complemento=this.Complemento
-   Ref.componentInstance.senha=this.Senha
-   Ref.componentInstance.senha2=this.Senha2
+   Ref.componentInstance.nome=this.Nome.value
+   Ref.componentInstance.sobrenome=this.Sobrenome.value
+   Ref.componentInstance.username=this.Username.value
+   Ref.componentInstance.cpf=this.CPF.value
+   Ref.componentInstance.telefone=this.Telefone.value
+   Ref.componentInstance.endereco=this.Endereco.value
+   Ref.componentInstance.complemento=this.Complemento.value
+   Ref.componentInstance.senha=this.Senha.value
+   Ref.componentInstance.senha2=this.Senha2.value
  }
   
 
